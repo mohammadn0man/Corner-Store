@@ -1,0 +1,2 @@
+rootProject.name='Corner Stores'
+include ':app'
