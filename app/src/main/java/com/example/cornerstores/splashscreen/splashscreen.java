@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cornerstores.DBhelper.SellerInfo;
 import com.example.cornerstores.R;
 import com.example.cornerstores.login.login;
 import com.example.cornerstores.tempforpractice.DatabaseTest;
@@ -41,7 +42,7 @@ public class splashscreen extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(splashscreen.this, DatabaseTest.class);
+                Intent intent = new Intent(splashscreen.this, SellerInfo.class);
                 startActivity(intent);
                 finish();
             }

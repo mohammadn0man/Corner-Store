@@ -17,6 +17,7 @@
         </activity>
 
         <activity android:name=".tempforpractice.DatabaseTest"/>
+        <activity android:name=".DBhelper.SellerInfo"/>
     </application>
 
 </manifest>

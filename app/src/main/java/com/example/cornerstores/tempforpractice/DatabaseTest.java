@@ -1,5 +1,6 @@
 package com.example.cornerstores.tempforpractice;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +12,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cornerstores.DBhelper.SellerInfo;
 import com.example.cornerstores.R;
+import com.example.cornerstores.splashscreen.splashscreen;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -63,6 +66,8 @@ public class DatabaseTest extends AppCompatActivity {
                 // Write a message to the database
 //                FirebaseDatabase database = FirebaseDatabase.getInstance();
 //                DatabaseReference myRef = database.getReference("user");
+                Intent intent = new Intent(DatabaseTest.this, SellerInfo.class);
+                startActivity(intent);
 
                 UserModelTemp userModelTemp = new UserModelTemp();
                 UserAddressModel userAddressModel = new UserAddressModel();
