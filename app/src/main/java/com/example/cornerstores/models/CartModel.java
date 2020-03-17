@@ -7,12 +7,25 @@ public class CartModel {
     public void addItem(){
 
     }
+
     public void deleteItem(){
 
     }
+
     public void updateQuantity(){
 
     }
-    
+
+    public void cartUnitPrice(){
+
+    }
+
+    public void cartTotalPrice(){
+
+    }
+
+    public void checkout(){
+
+    }
 
 }
