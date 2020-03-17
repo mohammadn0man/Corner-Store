@@ -1,7 +1,21 @@
 package com.example.cornerstores.models;
 
-public class SellerModel extends OrderModel{
+public class SellerModel {
     public int sale_id;
-    public float amount_sold;
-    public String date_of_sale;
+
+    public void createProductGroup() {
+
+    }
+
+    public void createProduct(){
+
+    }
+    public void deleteProductGroup(){
+
+    }
+
+    public void deleteProduct(){
+
+    }
+
 }

@@ -1,6 +1,6 @@
 package com.example.cornerstores.models;
 
-public class OrderModel extends UserModel{
+public class OrderModel {
 public int order_id;
 public String shipping_add, shipping_date, shipping_status;
 
