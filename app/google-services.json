@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "819444067357",
+    "firebase_url": "https://corner-stores-22600.firebaseio.com",
+    "project_id": "corner-stores-22600",
+    "storage_bucket": "corner-stores-22600.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819444067357:android:4e5bbb67016cc2757eeaf4",
+        "android_client_info": {
+          "package_name": "com.example.cornerstores"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819444067357-i5rekkgvbbch7n4j3ke93v8cai43m7od.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cornerstores",
+            "certificate_hash": "01b0e2e01a449c03558133e6c07a33d88d5471da"
+          }
+        },
+        {
+          "client_id": "819444067357-j5kre69qdrc9hnvd01vahmaak0olnqjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVMkOvkSY5B6Fc4Wsw2cQAUV0IZjYnJJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819444067357-j5kre69qdrc9hnvd01vahmaak0olnqjl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
