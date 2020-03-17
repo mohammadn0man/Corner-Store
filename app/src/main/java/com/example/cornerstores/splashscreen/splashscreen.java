@@ -16,6 +16,8 @@ import com.example.cornerstores.R;
 import com.example.cornerstores.login.login;
 import com.example.cornerstores.tempforpractice.DatabaseTest;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class splashscreen extends AppCompatActivity {
     private static int SPLASH_SCREEN = 5000;
     ImageView image;

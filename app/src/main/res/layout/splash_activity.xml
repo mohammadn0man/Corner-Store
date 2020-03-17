@@ -5,17 +5,17 @@
         android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#fece2f"
+    android:background="@color/white"
         tools:context=".splashscreen.splashscreen">
 
 
-        <ImageView
+        <pl.droidsonroids.gif.GifImageView
             android:id="@+id/imageView"
             android:layout_width="459dp"
             android:layout_height="388dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:src="@drawable/logo"
+            android:src="@drawable/logo1"
             android:transitionName="logo_image"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,10 +28,10 @@
         android:layout_width="390dp"
         android:layout_height="107dp"
         android:fontFamily="@font/kaushanscript"
-        android:text="Corner Store"
-
+        android:text="Corner Stores"
+            android:textColor="@color/slate_gray"
         android:textAlignment="center"
-        android:textSize="70sp"
+        android:textSize="60dp"
 
         android:transitionName="logo_text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,9 +46,10 @@
         android:layout_width="319dp"
         android:layout_height="49dp"
         android:fontFamily="@font/pacifico"
-        android:text="An app to sell and buy goods."
+        android:text="An app to buy goods."
         android:textAlignment="center"
         android:textSize="24sp"
+        android:textColor="@color/slate_gray"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
