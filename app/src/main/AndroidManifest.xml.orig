@@ -16,12 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+<<<<<<< HEAD
         <activity android:name=".login.login"></activity>
         <activity android:name=".login.signin"></activity>
         <activity android:name=".HomePage"></activity>
-        <activity android:name=".tempforpractice.DatabaseTest"/>
-        <activity android:name=".DBhelper.SellerInfo"/>
+=======
+
+>>>>>>> 55707efad43fe750126fc13a8d31fdb8ee790def
     </application>
 
 </manifest>
