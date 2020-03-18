@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sellerhome.ui.dashboard.DashboardFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:layout_marginTop="50dp"
+            android:layout_width="800px"
+            android:layout_gravity="center"
+            android:layout_height="100dp"
+            android:fontFamily="serif"
+            android:textSize="40dp"
+            android:text="View Items"
+            android:cursorVisible="true"
+            android:id="@+id/view_items"
+            android:shadowColor="#2c4251"
+            android:background="#ff8f41"
+            />
+
+        <Button
+            android:layout_marginTop="50dp"
+            android:layout_width="800px"
+            android:layout_gravity="center"
+            android:layout_height="100dp"
+            android:fontFamily="serif"
+            android:textSize="40dp"
+            android:text="ADD Items"
+            android:cursorVisible="true"
+            android:id="@+id/add_item"
+            android:shadowColor="#2c4251"
+            android:background="#ff8f41"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

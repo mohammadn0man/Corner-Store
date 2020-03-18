@@ -38,9 +38,9 @@ public class DatabaseTest extends AppCompatActivity {
         myRef.addValueEventListener( new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                UserModelTemp userModelTemp = dataSnapshot.child(Integer.toString(32)).getValue(UserModelTemp.class);
-
-                viewHolder.textView.setText(userModelTemp.getName());
+//                UserModelTemp userModelTemp = dataSnapshot.child(Integer.toString(32)).getValue(UserModelTemp.class);
+//
+//                viewHolder.textView.setText(userModelTemp.getName());
 
             }
 

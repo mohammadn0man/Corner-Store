@@ -1,2 +1,3 @@
 rootProject.name='Corner Stores'
 include ':app'
+include ':sellerdemo'
