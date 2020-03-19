@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -18,25 +19,27 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
-public class SellerLogin extends AppCompatActivity implements View.OnClickListener {
+import java.util.regex.Pattern;
+
+public class  SellerSignup extends AppCompatActivity implements View.OnClickListener {
+   public ProgressBar pro;
     EditText UserEmail, Password;
-    ProgressBar pro;
-    FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.seller_login);
+        setContentView(R.layout.seller_signup);
         UserEmail = findViewById(R.id.u_email);
         Password = findViewById(R.id.u_pass);
         pro = findViewById(R.id.progress_bar);
         pro.setVisibility(View.GONE);
-        findViewById(R.id.textview_signup).setOnClickListener(this);
-        findViewById(R.id.login_btn).setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
+        findViewById(R.id.signup_btn).setOnClickListener(this);
+        findViewById(R.id.clickable_login_text).setOnClickListener(this);
     }
-
-    private void userLogin(){
+    private void registerSeller(){
         String user_email = UserEmail.getText().toString().trim();
         String user_password = Password.getText().toString().trim();
         if(user_email.isEmpty()){
@@ -49,46 +52,49 @@ public class SellerLogin extends AppCompatActivity implements View.OnClickListen
             UserEmail.requestFocus();
             return; }
 
-        if(user_password.length()<6){
-            Password.setError("Minimum length of password should be 6");
-            Password.requestFocus();
-            return; }
+         if(user_password.length()<6){
+             Password.setError("Minimum length of password should be 6");
+             Password.requestFocus();
+             return; }
 
         if(user_password.isEmpty()){
             Password.setError("Password is required!");
             Password.requestFocus();
             return;}
         pro.setVisibility(View.VISIBLE);
-        mAuth.signInWithEmailAndPassword(user_email,user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(user_email,user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+                pro.setVisibility(View.GONE);
                 if(task.isSuccessful()){
-                    pro.setVisibility(View.GONE);
                     Toast.makeText(getApplicationContext(), "Welcome to Corner-Stores", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent (SellerLogin.this,SellerHome.class);
+                    Intent intent = new Intent (SellerSignup.this,SellerHome.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // doing this because if the user press the back button then he will again come to the login screen --Rahul
                     startActivity(intent);
                 }
-                else{
-                    Toast.makeText(getApplicationContext(),task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                else{ //if email is already registered --rahul
+                    if(task.getException() instanceof FirebaseAuthUserCollisionException){
+                        Toast.makeText(getApplicationContext(), "This email is already registered", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(),task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
-
     }
 
     @Override
     public void onClick(View v) {
         switch(v.getId())
         {
-            case R.id.textview_signup:
-                startActivity(new Intent (this,SellerSignup.class));
+            case R.id.clickable_login_text:
+                startActivity(new Intent(this,SellerLogin.class));
                 break;
-
-            case R.id.login_btn:
-                userLogin();
+            case R.id.signup_btn:
+                registerSeller();
                 break;
-
         }
 
     }

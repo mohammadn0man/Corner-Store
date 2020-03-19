@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.example.sellerdemo.sellerhome.SellerHome;
+import com.example.sellerdemo.sellerhome.SellerLogin;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-        Intent intent = new Intent(this, SellerHome.class);
+        Intent intent = new Intent(this, SellerLogin.class);
         startActivity(intent);
     }
 }

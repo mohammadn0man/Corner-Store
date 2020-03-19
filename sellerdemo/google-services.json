@@ -32,7 +32,16 @@
           "package_name": "com.example.sellerdemo"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "819444067357-fuhlaii7hsqiqn2gfnvj4rnoaqkatiov.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sellerdemo",
+            "certificate_hash": "d1c6ad1571130ed7119c56e242dc39a70be0e461"
+          }
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBVMkOvkSY5B6Fc4Wsw2cQAUV0IZjYnJJY"

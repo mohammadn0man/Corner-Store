@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sellerdemo">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,9 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".sellerhome.SellerHome"
-            android:label="@string/title_activity_seller_home"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".sellerhome.SellerHome"
+            android:label="@string/title_activity_seller_home"/>
         <activity android:name=".sellerhome.ui.dashboard.AddItem"/>
         <activity android:name=".sellerhome.ui.dashboard.ViewItems"/>
         <activity android:name=".sellerhome.SellerLogin"/>
+        <activity android:name=".sellerhome.SellerSignup"/>
     </application>
 
 </manifest>

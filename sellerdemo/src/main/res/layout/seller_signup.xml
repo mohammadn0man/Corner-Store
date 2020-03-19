@@ -7,20 +7,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="120dp">
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:id="@+id/progress_bar"/>
 
         <Button
-            android:id="@+id/login_btn"
+            android:id="@+id/signup_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/u_pass"
             android:layout_centerHorizontal="true"
-            android:text="LOGIN" />
+            android:text="SignUp" />
 
         <EditText
             android:id="@+id/u_pass"
@@ -58,17 +52,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="Welcome To Seller Interface"
+            android:text="SignUp Here"
             android:textSize="25dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/login_btn"
+            android:layout_below="@+id/signup_btn"
             android:layout_centerHorizontal="true"
             android:clickable="true"
-            android:id="@+id/textview_signup"
-            android:text="Don't have an account?SignUp here" />
+            android:text="Already have an account?Login here"
+            android:id="@+id/clickable_login_text"/>
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/progress_bar"/>
+
     </RelativeLayout>
 
 </LinearLayout>
