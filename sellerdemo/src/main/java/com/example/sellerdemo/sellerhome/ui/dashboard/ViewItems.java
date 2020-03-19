@@ -32,19 +32,22 @@ public class ViewItems extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.view_items_listview);
 
         DatabaseReference databaseReference;
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Seller_info").child("Store_name");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Seller_info").child("Store_name").child("itemModelArrayList");
+
+        Log.d(TAG, "about to query");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                SellerModel sellerModel = dataSnapshot.getValue(SellerModel.class);
-                Log.d(TAG, sellerModel.getStore_name());
-                ArrayList<ItemModel> itemModelArrayList = sellerModel.getItemModelArrayList();
+                ArrayList<ItemModel> itemModelArrayList = new ArrayList<>();
+                for(DataSnapshot ds : dataSnapshot.getChildren()){
+                    itemModelArrayList.add(ds.getValue(ItemModel.class));
+                }
                 Log.d(TAG, itemModelArrayList.get(0).getItem_name());
 
 
                 ViewItemsListAdapter adapter = new ViewItemsListAdapter(ViewItems.this, R.layout.view_items_list_layout, itemModelArrayList);
-//                listView.setAdapter(adapter);
+                listView.setAdapter(adapter);
             }
 
             @Override

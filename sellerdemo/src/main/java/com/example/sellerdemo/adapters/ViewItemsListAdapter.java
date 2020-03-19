@@ -41,6 +41,6 @@ public class ViewItemsListAdapter extends ArrayAdapter<ItemModel> {
 
         item_name.setText(itemModel.getItem_name());
 
-        return super.getView(position, convertView, parent);
+        return view;
     }
 }
