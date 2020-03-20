@@ -37,7 +37,7 @@ public class SellerLogin extends AppCompatActivity implements View.OnClickListen
     }
 
     private void userLogin(){
-        String user_email = UserEmail.getText().toString().trim();
+        final String user_email = UserEmail.getText().toString().trim();
         String user_password = Password.getText().toString().trim();
         if(user_email.isEmpty()){
             UserEmail.setError("Email is required!");
@@ -63,11 +63,19 @@ public class SellerLogin extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    if(mAuth.getCurrentUser().isEmailVerified()){
                     pro.setVisibility(View.GONE);
                     Toast.makeText(getApplicationContext(), "Welcome to Corner-Stores", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent (SellerLogin.this,SellerHome.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // doing this because if the user press the back button then he will again come to the login screen --Rahul
                     startActivity(intent);
+                    }
+                    else{
+                        pro.setVisibility(View.GONE);
+                        UserEmail.setText(" ");
+                        Password.setText("");
+                        Toast.makeText(SellerLogin.this, "Please verify your email", Toast.LENGTH_LONG).show();
+                    }
                 }
                 else{
                     Toast.makeText(getApplicationContext(),task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -88,8 +96,6 @@ public class SellerLogin extends AppCompatActivity implements View.OnClickListen
             case R.id.login_btn:
                 userLogin();
                 break;
-
         }
-
     }
 }

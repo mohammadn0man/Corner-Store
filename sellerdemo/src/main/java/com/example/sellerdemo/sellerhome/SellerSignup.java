@@ -67,17 +67,33 @@ public class  SellerSignup extends AppCompatActivity implements View.OnClickList
             public void onComplete(@NonNull Task<AuthResult> task) {
                 pro.setVisibility(View.GONE);
                 if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), "Welcome to Corner-Stores", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent (SellerSignup.this,SellerHome.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // doing this because if the user press the back button then he will again come to the login screen --Rahul
-                    startActivity(intent);
+                    mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()) {
+                                pro.setVisibility(View.GONE);
+                                UserEmail.setText(" ");
+                                Password.setText("");
+                                Toast.makeText(getApplicationContext(), "You have been registered. Kindly check your mail for verification", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(SellerSignup.this, SellerLogin.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
+                                }
+                            else{
+                                Toast.makeText(getApplicationContext(),task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
                 }
                 else{ //if email is already registered --rahul
                     if(task.getException() instanceof FirebaseAuthUserCollisionException){
+                        pro.setVisibility(View.GONE);
+                        UserEmail.setText(" ");
+                        Password.setText("");
                         Toast.makeText(getApplicationContext(), "This email is already registered", Toast.LENGTH_SHORT).show();
                     }
                     else
-                    {
+                    {   pro.setVisibility(View.GONE);
                         Toast.makeText(getApplicationContext(),task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
