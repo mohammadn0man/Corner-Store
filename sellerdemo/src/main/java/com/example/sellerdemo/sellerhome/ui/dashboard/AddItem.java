@@ -15,7 +15,7 @@ import com.example.sellerdemo.models.ItemModel;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class AddItem extends AppCompatActivity {
+public class    AddItem extends AppCompatActivity {
 
     private static final String TAG = "MyAddItem";
     ViewHolder viewHolder = new ViewHolder();
