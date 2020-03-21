@@ -33,6 +33,8 @@ public class SellerLogin extends AppCompatActivity implements View.OnClickListen
         pro.setVisibility(View.GONE);
         findViewById(R.id.textview_signup).setOnClickListener(this);
         findViewById(R.id.login_btn).setOnClickListener(this);
+        findViewById(R.id.forget_password).setOnClickListener(this);
+
         mAuth = FirebaseAuth.getInstance();
     }
 
@@ -67,8 +69,9 @@ public class SellerLogin extends AppCompatActivity implements View.OnClickListen
                     pro.setVisibility(View.GONE);
                     Toast.makeText(getApplicationContext(), "Welcome to Corner-Stores", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent (SellerLogin.this,SellerHome.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // doing this because if the user press the back button then he will again come to the login screen --Rahul
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);// doing this because if the user press the back button then he will again come to the login screen --Rahul
                     startActivity(intent);
+
                     }
                     else{
                         pro.setVisibility(View.GONE);
@@ -78,6 +81,7 @@ public class SellerLogin extends AppCompatActivity implements View.OnClickListen
                     }
                 }
                 else{
+                    pro.setVisibility(View.GONE);
                     Toast.makeText(getApplicationContext(),task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
@@ -96,6 +100,10 @@ public class SellerLogin extends AppCompatActivity implements View.OnClickListen
             case R.id.login_btn:
                 userLogin();
                 break;
+
+            case R.id.forget_password:
+               startActivity(new Intent(this,PasswordReset.class));
+               break;
         }
     }
 }
