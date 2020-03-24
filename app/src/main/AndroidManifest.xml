@@ -20,6 +20,8 @@
         <activity android:name=".login.login"></activity>
         <activity android:name=".login.signin"></activity>
         <activity android:name=".HomePage"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".login.SignUp"></activity>
         <activity android:name=".tempforpractice.DatabaseTest"/>
         <activity android:name=".DBhelper.SellerInfo"/>
     </application>
